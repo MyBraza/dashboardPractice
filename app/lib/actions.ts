@@ -104,7 +104,7 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
     redirect('/dashboard/invoices');
 }
 
-export async function deleteInvoice(id: string) {
+export async function deleteInvoice(id: string):Promise<any> {
     try {
         await sql`DELETE FROM invoices WHERE id = ${id}`;
     } catch (error) {
